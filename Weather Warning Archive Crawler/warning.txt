@@ -1,0 +1,53 @@
+
+926 
+WUUS53 KGID 171255
+SVRGID
+NEC001-099-181-171345-
+/O.NEW.KGID.SV.W.0020.190417T1255Z-190417T1345Z/
+
+BULLETIN - IMMEDIATE BROADCAST REQUESTED
+Severe Thunderstorm Warning
+National Weather Service Hastings NE
+755 AM CDT Wed Apr 17 2019
+
+The National Weather Service in Hastings has issued a
+
+* Severe Thunderstorm Warning for...
+  Northern Webster County in south central Nebraska...
+  Adams County in south central Nebraska...
+  Southeastern Kearney County in south central Nebraska...
+
+* Until 845 AM CDT.
+
+* At 755 AM CDT, a severe thunderstorm was located over Bladen, or 22
+  miles southwest of Hastings, moving east at 35 mph.
+
+  HAZARD...60 mph wind gusts and quarter size hail.
+
+  SOURCE...Radar indicated.
+
+  IMPACT...Hail damage to vehicles is expected. Expect wind damage 
+           to roofs, siding, and trees.
+
+* Locations impacted include...
+  Hastings, Blue Hill, Campbell, Bladen, Roseland, Holstein, Ayr and
+  Rosemont.
+
+PRECAUTIONARY/PREPAREDNESS ACTIONS...
+
+For your protection move to an interior room on the lowest floor of a
+building.
+
+&&
+
+LAT...LON 4017 9869 4023 9873 4035 9873 4035 9880
+      4044 9885 4064 9831 4058 9828 4025 9827
+TIME...MOT...LOC 1255Z 249DEG 28KT 4032 9864 
+
+HAIL...1.00IN
+WIND...60MPH
+ 
+$$
+
+Billings Wright
+
