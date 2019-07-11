@@ -5,8 +5,6 @@
 
 #include "automator.hxx"
 
-#define SCREEN_WIDTH 2560
-#define SCREEN_HEIGHT 1600
 
 __int64 unixTimestamp_() {
 	std::chrono::milliseconds timeStamp;
