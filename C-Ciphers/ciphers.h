@@ -8,4 +8,6 @@
 extern char* vigenere(const char*, const char*);
 extern char* rot13(const char*);
 
+extern char* vigenere_prototype(const char*, const char*);
+
 #endif

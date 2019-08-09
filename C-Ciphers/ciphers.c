@@ -62,6 +62,11 @@ char* vigenere(const char* plain_string, const char* key) {
     return ciphered_string;
 }
 
+// Better way of vigenere 
+char* vigenere_prototype(const char* plain_string, const char* key) {
+
+}
+
 char* rot13(const char* plain_string) {
     // Create a copy of the plain plain text, which will then be ciphered before being returned.
     char* ciphered_string = malloc(strlen(plain_string)+1);
