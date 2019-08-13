@@ -67,6 +67,7 @@ substitutions = {
     'l' => 'w', # Hello => Hewwo
     'L' => 'W', # HELLO => HEWWO
     /(N|n)([aeiou]|[AEIOU])/ => '\1y\2', # Regex that inserts y's after n's if the following letter is a vowel.
+    /(P|p)([aeiou]|[AEIOU])/ => '\1w\2', # Regex that inserts w's after p's if the following letter is a vowel.
 }.each do |from, to| 
     input_text.gsub!(from, to)
 end
