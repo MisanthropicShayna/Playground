@@ -1,8 +1,10 @@
 # Furrifyer
-A command line program that converts standard ASCII into a CPU tumor. 
+A command line program that converts ASCII or UTF-8 encoded characters into a lack of faith in humanity. Warning, this program produces carcinogens when run, please handle responsibly. Overexposure to this program may result in _terminal_ cancer (kill me).
+
+L's and R's are substituted with W's, Y's are inserted after N's if the following letter is a vowel (same with P's and W's), and random kawaii faces are inserted where sentences end (looks for `.` `!` `?`) 
 
 ### Arguments
-* -t [text]	| Supplies text input.
+* -t    [text]	| Supplies text input.
 * -f 	[file]	| Read input from a file.
 * -r 			| Raw mode, no fancy art when printing results.
 
