@@ -35,6 +35,14 @@ inline std::clock_t CurrentTime() {
     return (std::clock() / CLOCKS_PER_SEC);
 }
 
+int32_t ProcessWord(std::string const& word, bool const& erorr_tracking = false) {
+
+}
+
+int32_t ProcessPhrase(std::string const& phrase, bool const& error_tracking = false) {
+
+}
+
 int main(int argc, char const* argv[]) {
     bool phrase_mode, error_tracking = false;
     std::vector<std::string> dictionary;
@@ -57,13 +65,13 @@ int main(int argc, char const* argv[]) {
             input_data_stream = new std::ifstream(file_path, std::ios::binary);
             memory_allocated = true;
         } else if(!strcmp(argument, "--phrases") || !strcmp(argument, "-p")) {
-            phrase_mode = true;
+            large_phrase_mode = true;
         } else if(!strcmp(argument, "--error-tracking") || !strcmp(argument, "-t")) {
             error_tracking = true;
         }
     }
 
-    for(std::string line; std::getline(*input_data_stream, line);) {
+    for(std::string line; std::getline(*data_stream, line);) {
         if(line.size()) {
             line.pop_back(); // Removes the newline byte from the line.
             dictionary.push_back(line); // Adds the modified line to the dictionary.
@@ -72,50 +80,28 @@ int main(int argc, char const* argv[]) {
     
     if(memory_allocated) delete input_data_stream;
 
-    std::string target_word = dictionary.at(Randint(0, dictionary.size()-1));
-    std::string word_buffer;
-        
-    double words_typed = 0;
-    double delta_sum = 0;
+    std::clock_t processing_time_sum = 0;
     
-    std::clock_t begin_time_total = CurrentTime();
-    std::clock_t begin_time = CurrentTime();
-        
-    for(char last_character; last_character != 27;) {
-        bool first_char_of_word = (last_character == 0x00);
-        
-        std::cout << MakeDisplayMessageString({target_word, word_buffer});
-        
-        last_character = _getch();
-        
-        if(first_char_of_word) begin_time = CurrentTime();
-        
-        if(last_character == 0x08) {
-            if(word_buffer.size()) {
-                word_buffer.pop_back();
-            }
+    std::clock_t total_time_start = std::clock() / CLOCKS_PER_SEC;
+
+    for(;;) {
+        std::string random_entry = dictionary.at(Randint(0, dictionary.size()-1));
+        int32_t process_time = false;
+
+        if(phrase_mode) {
+            process_time = ProcessPhrase(random_entry, error_tracking);
         } else {
-            word_buffer.push_back(last_character);
+            process_time = ProcessWord(random_entry, error_tracking);
         }
-        
-        std::cout << MakeDisplayMessageString({target_word, word_buffer});
-                
-        if(word_buffer == target_word) {
-            target_word = dictionary.at(Randint(0, dictionary.size()-1));
-            last_character = 0x00;
-            word_buffer.clear();
-            std::cout << std::endl;
-            ++words_typed;
-            delta_sum += (CurrentTime() - begin_time);
-        }
+
+        if(process_time < 0) break;
+        else processing_time_sum += process_time;
     }
-    
-    begin_time_total = (CurrentTime() - begin_time_total);
-    
-    std::cout << std::endl << std::endl << words_typed << " Words typed in " << delta_sum << " seconds of typing, during " << begin_time_total << " total seconds." << std::endl;
-    std::cout << (words_typed / delta_sum) << " Words per second." << std::endl;
-    std::cout << (words_typed / delta_sum) * 60 << " Words per minutes spent typing." << std::endl;
-    std::cout << (words_typed / begin_time_total) * 60 << " Words per minute." << std::endl;
-        
+
+    std::clock_t total_time_end = std::clock() / CLOCKS_PER_SEC;
+    std::clock_t total_time = (total_time_end - total_time_start);
+
+    // Results here
+
     return 0;
 }
