@@ -91,7 +91,7 @@ int main(int argc, char** argv) {
                 Sleep(1);
             }
 
-            std::string plain_json_output = proctimes_json.dump(4);
+            std::string plain_json_output = proctimes_json.dump();
 
             std::ofstream output_stream("./proctimes.json", std::ios::binary);
             if(output_stream.good()) {
