@@ -1,5 +1,5 @@
 # Furrifyer
-A command line program that converts ASCII or UTF-8 encoded characters into a lack of faith in humanity. Warning, this program produces carcinogens when run, please handle responsibly. Overexposure to this program may result in _terminal_ cancer (kill me).
+A command line program that converts ASCII or UTF-8 encoded characters into a lack of faith in humanity.
 
 L's and R's are substituted with W's, Y's are inserted after N's if the following letter is a vowel (same with P's and W's), and random kawaii faces are inserted where sentences end (looks for `.` `!` `?`) 
 
